@@ -1,0 +1,180 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0b1020;
+    color: white;
+    min-height: 100vh;
+}
+
+header {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #111936;
+}
+
+header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+header p {
+    color: #b8c1d9;
+    font-size: 17px;
+}
+
+main {
+    width: 90%;
+    max-width: 1000px;
+    margin: 40px auto;
+}
+
+.search-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 35px;
+    flex-wrap: wrap;
+}
+
+.search-section label {
+    font-size: 17px;
+}
+
+.search-section input {
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+button {
+    padding: 12px 22px;
+    border: none;
+    border-radius: 6px;
+    background-color: #4f7cff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #3b65d9;
+}
+
+#loading {
+    text-align: center;
+    font-size: 18px;
+    margin: 20px;
+    color: #8fa7ff;
+}
+
+#error {
+    text-align: center;
+    background-color: #3a1720;
+    color: #ff9aa9;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 25px;
+}
+
+.hidden {
+    display: none;
+}
+
+#apod {
+    background-color: #151d3a;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+#title {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+#dateDisplay {
+    text-align: center;
+    color: #9ca9c9;
+    margin-bottom: 25px;
+}
+
+.media-container {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#apodImage {
+    display: none;
+    max-width: 100%;
+    max-height: 600px;
+    border-radius: 10px;
+    margin: auto;
+}
+
+#apodVideo {
+    display: none;
+    width: 100%;
+    height: 500px;
+    border: none;
+    border-radius: 10px;
+}
+
+.description {
+    line-height: 1.7;
+}
+
+.description h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+#explanation {
+    color: #c4cbe0;
+    font-size: 16px;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+    background-color: #111936;
+    color: #8d98b5;
+}
+
+@media (max-width: 600px) {
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    main {
+        width: 94%;
+    }
+
+    #apod {
+        padding: 20px;
+    }
+
+    #title {
+        font-size: 24px;
+    }
+
+    #apodVideo {
+        height: 300px;
+    }
+
+    .search-section {
+        flex-direction: column;
+    }
+
+}
+
