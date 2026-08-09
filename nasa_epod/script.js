@@ -81,3 +81,57 @@ async function getAPOD() {
     }
 }
 
+// Display APOD Data
+function displayAPOD(data) {
+
+    // Display title
+    title.textContent = data.title;
+
+    // Display date
+    dateDisplay.textContent = `Date: ${data.date}`;
+
+    // Display explanation
+    explanation.textContent = data.explanation;
+
+    // Check if the media is an image
+    if (data.media_type === "image") {
+
+        // Show image
+        apodImage.style.display = "block";
+
+        // Hide video
+        apodVideo.style.display = "none";
+
+        // Set image URL
+        apodImage.src = data.url;
+
+        // Set image description
+        apodImage.alt = data.title;
+    }
+
+
+    // Check if the media is a video
+    else if (data.media_type === "video") {
+
+        // Hide image
+        apodImage.style.display = "none";
+
+        // Show video
+        apodVideo.style.display = "block";
+
+        // Set video URL
+        apodVideo.src = data.url;
+    }
+}
+
+// Show Error Message
+function showError(message) {
+    error.textContent = message;
+    error.classList.remove("hidden");
+}
+
+// Button Click Event
+searchBtn.addEventListener("click", getAPOD);
+
+// Load Today's APOD Automatically
+getAPOD();
