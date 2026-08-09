@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NASA APOD Explorer</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>🚀 NASA APOD Explorer</h1>
+        <p>Explore NASA's Astronomy Picture of the Day</p>
+    </header>
+
+    <main>
+
+        <!-- Date Search Section -->
+        <section class="search-section">
+
+            <label for="date">Choose a date:</label>
+
+            <input 
+                type="date" 
+                id="date"
+            >
+
+            <button id="searchBtn">
+                Explore
+            </button>
+
+        </section>
+
+        <p id="loading" class="hidden">
+            Loading NASA data...
+        </p>
+
+        <p id="error" class="hidden"></p>
+
+        <section id="apod">
+
+            <h2 id="title">
+                Astronomy Picture of the Day
+            </h2>
+
+            <p id="dateDisplay"></p>
+
+            <!-- Image will be displayed here -->
+            <div class="media-container">
+                <img 
+                    id="apodImage" 
+                    src="" 
+                    alt="NASA Astronomy Picture"
+                >
+                
+                <!-- Video will be displayed here if NASA provides a video -->
+                <iframe 
+                    id="apodVideo"
+                    src=""
+                    title="NASA Astronomy Picture Video"
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+            <div class="description">
+
+                <h3>About this picture</h3>
+
+                <p id="explanation">
+                    Select a date to explore NASA's Astronomy Picture of the Day.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>NASA APOD Explorer | Built with HTML, CSS & JavaScript</p>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+
