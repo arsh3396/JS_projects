@@ -31,5 +31,53 @@ dateInput.value = todayDate;
 // Prevent selecting a future date
 dateInput.max = todayDate;
 
+// Function to Get NASA APOD
+async function getAPOD() {
 
+    // Get selected date
+    const selectedDate = dateInput.value;
+
+    // Check if user selected a date
+    if (!selectedDate) {
+        showError("Please select a date.");
+        return;
+    }
+
+    // Show loading message
+    loading.classList.remove("hidden");
+
+    // Hide previous error
+    error.classList.add("hidden");
+
+
+    try {
+        // Create API URL
+        const url = `${apiUrl}?api_key=${apiKey}&date=${selectedDate}`;
+
+        // Send request to NASA API
+        const response = await fetch(url);
+
+        // Check if API request was successful
+        if (!response.ok) {
+
+            throw new Error("Unable to get data from NASA API.");
+        }
+
+        // Convert response into JavaScript object
+        const data = await response.json();
+
+        // Display the data
+        displayAPOD(data);
+    }
+    catch (err) {
+        // Show error message
+        showError("Something went wrong. Please try again.");
+
+        console.log(err);
+    }
+    finally {
+        // Hide loading message
+        loading.classList.add("hidden");
+    }
+}
 
